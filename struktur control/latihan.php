@@ -11,7 +11,7 @@ if ($nilai > 75) {
 
 //switch case 
 
-echo"<h1>--------------- switchs ------------------ <h1>";
+echo"<h1>--------------- switch ------------------ <h1>";
 $warna = "red";
 switch ($warna == 'red') {
    case "red";
