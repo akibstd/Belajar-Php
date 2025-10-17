@@ -1,15 +1,13 @@
 <?php 
-$hasil=0;
-  
+$panjang = "";
+$lebar = "";
+$hasil = "";
+
 if (isset($_POST['submit'])) {
     $panjang = $_POST['panjang'];
     $lebar = $_POST['lebar'];
-     $hasil = $panjang * $lebar;
-
-   
+    $hasil = $panjang * $lebar;
 }
-    
-                 
 ?>
 
 <!DOCTYPE html> 
@@ -21,39 +19,33 @@ if (isset($_POST['submit'])) {
 </head>
 <body>
     <form  method="post">
-        <label for="">Panjang</label>
-    <input type="number" name="panjang"> <br> <br>
+        <label>Panjang</label>
+        <input type="number" name="panjang" required> <br><br>
 
-     <label for="">Lebar</label>
-    <input type="number" name="lebar">  <br> <br>
+        <label>Lebar</label>
+        <input type="number" name="lebar" required> <br><br>
 
-    <button name="submit" type="submit">Hitung</button>
+        <button name="submit" type="submit">Hitung</button>
     </form>
-   
-   <table border="1"> 
-    <thead>
-        <tr>
-            <th>panjang</th>
-            <th>lebar</th>
-            <th>Hasil</th>
-        </tr>
-    </thead>
-    <tbody>
-         <?php foreach($hasil as  $angka): ?>
-          
-        <tr>
-            <td>10</td>
-            <td>11</td>
-            <td><?=$angka ?></td>
-        </tr>
-         <?php endforeach ?>
-    </tbody>
 
-   </table>
-   
+    <?php if (!empty($hasil)): ?>
+    <table border="1"> 
+        <thead>
+            <tr>
+                <th>Panjang</th>
+                <th>Lebar</th>
+                <th>Hasil</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><?= $panjang ?></td>
+                <td><?= $lebar ?></td>
+                <td><?= $hasil ?></td>
+            </tr>
+        </tbody>
+    </table>
+    <?php endif; ?>
+
 </body>
 </html>
-
-
-           
-            
