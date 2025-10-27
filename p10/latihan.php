@@ -1,20 +1,41 @@
 <?php 
-if(isset($_POST['save'])){
- $nama=$_POST['nama'];
-$golongan=$_POST['golongan'];
-$status=$_POST['status'];
-$jmlAnak=$_POST['jmlAnak'];
- 
-   if($golongan && $jmlAnak <4){
-    $total= $golongan +30000;
-       
-   }
+$totalGaji = 0;
+$tunjanganAnak = 0;
+$gajiPokok = 0;
 
- 
+if (isset($_POST['save'])) {
+    $nama = $_POST['nama'];
+    $golongan = $_POST['golongan'];
+    $status = $_POST['status'];
+    $jmlAnak = $_POST['jmlAnak'];
 
-  echo $total;
+    // Hitung gaji pokok berdasarkan golongan
+    switch ($golongan) {
+        case 'A':
+            $gajiPokok = 1000000;
+            break;
+        case 'B':
+            $gajiPokok = 1500000;
+            break;
+        case 'C':
+            $gajiPokok = 2000000;
+            break;
+        default:
+            $gajiPokok = 0;
+            break;
+    }
 
+    // Hitung tunjangan anak (jika punya anak)
+    if ($jmlAnak > 0 && $jmlAnak < 4) {
+        $tunjanganAnak = $jmlAnak * 30000;
+    } elseif ($jmlAnak >= 4) {
+        $tunjanganAnak = 4 * 30000; // maksimal 4 anak
+    }
+
+    // Hitung total gaji
+    $totalGaji = $gajiPokok + $tunjanganAnak;
 }
+
 
 ?>
 
