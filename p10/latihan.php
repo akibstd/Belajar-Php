@@ -53,9 +53,9 @@ if (isset($_POST['save'])) {
     <input type="text" name="nama"><br> <br>
 
       <label for="">golongan</label>
-      <input type="radio" name="golongan" value="1000000">A
-      <input type="radio" name="golongan" value="1,500">B
-      <input type="radio" name="golongan" value="200000">C  <br> <br>
+      <input type="radio" name="golongan" value="A">A
+      <input type="radio" name="golongan" value="b">B
+      <input type="radio" name="golongan" value="C">C  <br> <br>
     
     <label for="">Status</label> ::
     <select name="status" id="" name="status"><br> <br>
@@ -84,7 +84,14 @@ if (isset($_POST['save'])) {
                 <td>tunjangan Anak</td>
                 <td> Total Gaji</td>
             </tr>
+            
         </thead>
+
+        <tbody>
+            <tr>
+                <td> <?=$nama ?></td>
+            </tr>
+        </tbody>
     </table>
     
 </body>
