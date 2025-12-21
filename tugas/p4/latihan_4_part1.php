@@ -61,11 +61,11 @@ foreach ($barang as $key => $brg) {
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Daftar Pemesanan</title>
+    <title>Akib Supandi</title>
 </head>
 <body>
 
-<h2>Daftar Pemesanan Peralatan Kantor</h2>
+<h2>Daftar Pemesanan Alat Kantor Akib Tach</h2>
 
 <table border="1" cellpadding="5" cellspacing="0">
     <tr>
