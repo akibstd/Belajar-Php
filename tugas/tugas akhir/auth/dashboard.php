@@ -32,7 +32,7 @@
             <div class="card shadow-sm text-center">
                 <div class="card-body">
 
-                    <h4 class="mb-3">Selamat Datang 👋</h4>
+                    
                     <p class="text-muted">
                         Anda login sebagai <strong><?= $_SESSION['username']; ?></strong>.
                         Gunakan menu di bawah untuk mengelola transaksi penjualan helm.
