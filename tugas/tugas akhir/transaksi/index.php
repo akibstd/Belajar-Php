@@ -19,7 +19,7 @@ $keyword = isset($_GET['keyword']) ? $_GET['keyword'] : '';
 
         <div class="card shadow">
             <div class="card-header bg-primary text-white">
-                <h4>Data Transaksi Penjualan Helm</h4>
+                <h4>Data Transaksi Penjualan Helm Akib Supandi</h4>
             </div>
 
             <div class="card-body">
@@ -34,8 +34,8 @@ $keyword = isset($_GET['keyword']) ? $_GET['keyword'] : '';
 
                     <div class="col-md-6">
                         <form method="GET" class="d-flex">
-                            <input type="text" name="keyword" class="form-control me-2"
-                                placeholder="Cari tanggal / jenis helm" value="<?= $keyword ?>">
+                            <input type="text" name="keyword" class="form-control me-2" action="index.php"
+                                value="<?= $keyword ?>">
                             <button class="btn btn-primary">Cari</button>
                         </form>
                     </div>
@@ -60,15 +60,15 @@ $keyword = isset($_GET['keyword']) ? $_GET['keyword'] : '';
 
                         if ($keyword != '') {
                             $query = "
-                      SELECT * FROM transaksi
-                             WHERE jenis_helm LIKE '%" . $keyword . "%'
+                              SELECT * FROM transaksi
+                                WHERE jenis_helm LIKE '%" . $keyword . "%'
                                   OR tanggal LIKE '%" . $keyword . "%'
                               ORDER BY id DESC
                                       ";
                         } else {
                             $query = "SELECT * FROM transaksi ORDER BY id DESC";
                         }
-                        $data = mysqli_query($koneksi, $query)  or die("Query Error: " . mysqli_error($koneksi));
+                        $data = mysqli_query($koneksi, $query) or die("Query Error: " . mysqli_error($koneksi));
                         if (mysqli_num_rows($data) > 0) {
                             while ($d = mysqli_fetch_assoc($data)) {
                                 ?>

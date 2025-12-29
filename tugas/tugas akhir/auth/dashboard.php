@@ -4,7 +4,7 @@
 <html lang="id">
 <head>
     <meta charset="UTF-8">
-    <title>Dashboard</title>
+    <title>Akib _helm WEb</title>
 
    
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -15,11 +15,9 @@
 <nav class="navbar navbar-dark bg-primary shadow">
     <div class="container">
         <span class="navbar-brand mb-0 h5">
-             Sistem Penjualan Helm
+             Sistem Penjualan Helm: Akib Supandi <br>      Nim :221011402724         
         </span>
-        <span class="text-white">
-            Login sebagai: <strong><?= $_SESSION['username']; ?></strong>
-        </span>
+        
     </div>
 </nav>
 
@@ -34,19 +32,18 @@
 
                     
                     <p class="text-muted">
-                        Anda login sebagai <strong><?= $_SESSION['username']; ?></strong>.
-                        Gunakan menu di bawah untuk mengelola transaksi penjualan helm.
+                        Anda login sebagai <strong><?= $_SESSION['username']; ?></strong> di dashboard
+                       
                     </p>
 
                     <div class="d-grid gap-2 mt-4">
                         <a href="../transaksi/index.php" class="btn btn-success btn-lg">
-                            📋 Kelola Transaksi
+                             Kelola Transaksi
                         </a>
 
-                        <a href="logout.php" 
-                           class="btn btn-danger"
-                           onclick="return confirm('Yakin ingin logout?')">
-                            🚪 Logout
+                        <a href="../auth/logout.php" 
+                           class="btn btn-danger">
+                             Logout
                         </a>
                     </div>
 
