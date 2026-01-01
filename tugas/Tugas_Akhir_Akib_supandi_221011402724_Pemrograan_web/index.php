@@ -1,6 +1,12 @@
 <?php
-include '../auth/cek_login.php';
-include '../db/koneksi.php';
+
+include 'koneksi.php';
+
+session_start();
+if (!isset($_SESSION['username'])) {
+    header("Location: login.php");
+    exit;
+}
 
 $keyword = isset($_GET['keyword']) ? $_GET['keyword'] : '';
 ?>
@@ -10,7 +16,7 @@ $keyword = isset($_GET['keyword']) ? $_GET['keyword'] : '';
 
 <head>
     <meta charset="UTF-8">
-    <title>Data Transaksi</title>
+    <title>Data Transaksi helm Akib web</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 
@@ -19,7 +25,7 @@ $keyword = isset($_GET['keyword']) ? $_GET['keyword'] : '';
 
         <div class="card shadow">
             <div class="card-header bg-primary text-white">
-                <h4>Data Transaksi Penjualan Helm Akib Supandi</h4>
+                <h4>Data Transaksi Penjualan Helm Akib Supandi </h4>
             </div>
 
             <div class="card-body">
@@ -94,6 +100,9 @@ $keyword = isset($_GET['keyword']) ? $_GET['keyword'] : '';
                     </tbody>
                 </table>
 
+            </div>
+            <div class="card-footer bg-primary text-white">
+                <h5>nim: 221011402724</h5>
             </div>
         </div>
 
